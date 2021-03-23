@@ -1,28 +1,38 @@
 ---
-title: "proposal"
+title: "STA 199 Project Proposal"
+author: "Maggie Brooks, Allison Bunker, Jonah Cagley, Jacqueline Wright"
+date: "03-22-21"
 output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
 ```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+```{r netflix}
+netflix <- read.csv("~/R/final_project_proposal/data/netflix_titles.csv")
+glimpse(netflix)
 ```
 
-## Including Plots
+The source of this data is Kaggle but it was originally collected from Flixable, a third party Netflix search engine, in 2019.  It contains 12 columns with 7787 rows.  Some relevant variables that it contains are the title of the show or movie, identifier as a show or movie, country it was produced in, release year, and rating.  From this data set we can analyze what Netflix content is available in different countries and how this has changed over time.
+  We can hypothesize that the ratio of tv shows to movies on Netflix has increased over time and varies by country.  We can also compare this data set to IMDB ratings or Rotten Tomatoes to see if movie or tv show reviews play a role in the changing shift from primarily movies to primarily tv shows.
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r covid}
+tested <- read.csv("~/R/final_project_proposal/data/tested_worldwide.csv")
+glimpse(tested)
+vaccinations <- read.csv("~/R/final_project_proposal/data/country_vaccinations.csv")
+glimpse(vaccinations)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+The source of this data is Kaggle, but it is (actively) being updated and merged from Our World in Data GitHub repository for COVID-19. It contains 15 columns of data. From this data we can analyze geographical trends in vaccination rates, identify common factors that lead to an increase or decrease in vaccination rates, and track how vaccination rates are changing in real time. We question how the vaccination rate trends will change over time, and what factors are the best indicators of the vaccination rates.
+	We hypothesize that countries in Asia, which is the continent with the highest GDP worldwide, will have the highest percent vaccination rate because this is where the virus originated from (most time to develop and research vaccines). We can also compare this dataset to national financial trends and the COVID testing rates by country worldwide.
+ 
+
+```{r}
+happiness <- read.csv("~/R/final_project_proposal/data/DataPanelWHR2021C2.csv")
+glimpse(happiness)
+```
+
+This data source is from Kaggle and has 11 columns of data.  The data is based on various surveys in 155 countries starting in 2012.  For this dataset, we think it would be interesting to evaluate trends in happiness varying by location and time.  There are clear external factors that are affecting this data (such as COVID-19, political events, war, weather etc). I hypothesize that for a given country, if there is any major event such as war, happiness will be lower.  I also expect the overall happiness around the world to be lower in 2020 and 2021 due to COVID.  I am curious to evaluate countries based on varying forms of government and see how this effects general happiness.
